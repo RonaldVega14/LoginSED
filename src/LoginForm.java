@@ -228,7 +228,7 @@ public class LoginForm extends javax.swing.JFrame {
         if(connect.getConnection(user, pass)){
             JOptionPane.showMessageDialog(null, "Username found");
         }else{
-            JOptionPane.showMessageDialog(null, "Something went wrong: Username not found");
+            JOptionPane.showMessageDialog(null, "Something went wrong: Username not found or the password is incorrect");
             
             UserField.setText("");
             PasswordField.setText("");
