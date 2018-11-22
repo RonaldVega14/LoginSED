@@ -15,7 +15,10 @@ public class DBConection {
     
     private Connection con;
     private Statement st;
+    private PreparedStatement pst;
     private ResultSet rs;
+    private String query;
+    private boolean credentials = false;
 
     public DBConection() {
         try{
@@ -47,6 +50,28 @@ public class DBConection {
         }
         
         
+    }
+    
+    public boolean getConnection(String user, String pass){
+        try{
+            query = "SELECT * FROM `USUARIO` WHERE username=? and pass=? ";
+            pst = con.prepareStatement(query);
+            pst.setString(1, user);
+            pst.setString(2, pass);
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                credentials = true;
+                return credentials;
+            }else{
+                credentials = false;
+                return credentials;
+            }
+        }catch(Exception e){
+        
+        }
+        
+        return credentials;
     }
     
 }

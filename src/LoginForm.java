@@ -1,9 +1,11 @@
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
     
-    DBConection conect = new DBConection();
+    DBConection connect = new DBConection();
+    private String user, pass;
 
     public LoginForm() {
         initComponents();
@@ -200,7 +202,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jLabelCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCloseMouseClicked
        
-        System.exit(0);
+       System.exit(0);
         
     }//GEN-LAST:event_jLabelCloseMouseClicked
 
@@ -220,7 +222,18 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 //Action performed when click on signIn
     private void signInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInMouseClicked
-        conect.getUsers();
+        user = UserField.getText();
+        pass = PasswordField.getText();
+        
+        if(connect.getConnection(user, pass)){
+            JOptionPane.showMessageDialog(null, "Username found");
+        }else{
+            JOptionPane.showMessageDialog(null, "Something went wrong: Username not found");
+            
+            UserField.setText("");
+            PasswordField.setText("");
+        }
+        
     }//GEN-LAST:event_signInMouseClicked
 
     /**
