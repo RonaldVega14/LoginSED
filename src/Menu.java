@@ -105,12 +105,14 @@ public class Menu implements ActionListener {
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
         f.remove(panel8);
+        f.remove(back);
         f.getContentPane().add(panel);
         f.getContentPane().add(panel2);
         f.getContentPane().add(panel3);
         f.getContentPane().add(panel4);
         f.getContentPane().add(panel5);
-        f.revalidate();
+        
+        //f.revalidate();
         f.repaint();
         
         
@@ -126,7 +128,7 @@ public class Menu implements ActionListener {
     });
     back.add(labelb);
     
-    
+    label.setIcon(icon);
     f.setVisible(true);
         
         
@@ -149,7 +151,8 @@ public class Menu implements ActionListener {
     label2.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent me) {
-        System.out.println("CLICKED");
+       System.out.println("CLICKED");
+        //QUITANDO MENU
         f.remove(panel);
         f.remove(panel2);
         f.remove(panel3);
@@ -157,6 +160,56 @@ public class Menu implements ActionListener {
         f.remove(panel5);
         f.revalidate();
         f.repaint();
+        //TABLA
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    JTable table = new JTable(rowData, columnNames);
+    table.setFont(new Font("Arial", Font.PLAIN, 14));
+    JScrollPane scrollPane = new JScrollPane(table);
+    scrollPane.setPreferredSize(new Dimension (1080, 900));
+    final JPanel panel8 = new JPanel();
+    panel8.setBackground(Color.WHITE);
+    panel8.setBounds(176, 216, 1500, 740);
+    f.getContentPane().add(panel8);
+    panel8.add(scrollPane, BorderLayout.CENTER);
+    ///////
+    final JPanel back = new JPanel();
+    back.setBackground(Color.WHITE);
+    back.setBounds(20, 20, 70, 70);
+    f.getContentPane().add(back);
+    final ImageIcon backico = new ImageIcon("packjefe/back.png");
+    final JLabel labelb = new JLabel(backico);
+    labelb.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent me) {
+        System.out.println("CLICKED");
+        f.remove(panel8);
+        f.remove(back);
+        f.getContentPane().add(panel);
+        f.getContentPane().add(panel2);
+        f.getContentPane().add(panel3);
+        f.getContentPane().add(panel4);
+        f.getContentPane().add(panel5);
+        
+        //f.revalidate();
+        f.repaint();
+        
+        
+      }
+      @Override
+       public void mouseEntered(MouseEvent me) {
+            labelb.setIcon(new ImageIcon("packjefe/back-s.png"));
+            }
+      @Override
+       public void mouseExited(MouseEvent me){
+            labelb.setIcon(backico);
+            }
+    });
+    back.add(labelb);
+    
+    label2.setIcon(icon2);
+    f.setVisible(true);
       }
        @Override
        public void mouseEntered(MouseEvent me) {
@@ -175,6 +228,8 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        System.out.println("CLICKED");
+        //QUITANDO MENU
         f.remove(panel);
         f.remove(panel2);
         f.remove(panel3);
@@ -182,6 +237,56 @@ public class Menu implements ActionListener {
         f.remove(panel5);
         f.revalidate();
         f.repaint();
+        //TABLA
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    JTable table = new JTable(rowData, columnNames);
+    table.setFont(new Font("Arial", Font.PLAIN, 14));
+    JScrollPane scrollPane = new JScrollPane(table);
+    scrollPane.setPreferredSize(new Dimension (1080, 900));
+    final JPanel panel8 = new JPanel();
+    panel8.setBackground(Color.WHITE);
+    panel8.setBounds(176, 216, 1500, 740);
+    f.getContentPane().add(panel8);
+    panel8.add(scrollPane, BorderLayout.CENTER);
+    ///////
+    final JPanel back = new JPanel();
+    back.setBackground(Color.WHITE);
+    back.setBounds(20, 20, 70, 70);
+    f.getContentPane().add(back);
+    final ImageIcon backico = new ImageIcon("packjefe/back.png");
+    final JLabel labelb = new JLabel(backico);
+    labelb.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent me) {
+        System.out.println("CLICKED");
+        f.remove(panel8);
+        f.remove(back);
+        f.getContentPane().add(panel);
+        f.getContentPane().add(panel2);
+        f.getContentPane().add(panel3);
+        f.getContentPane().add(panel4);
+        f.getContentPane().add(panel5);
+        
+        //f.revalidate();
+        f.repaint();
+        
+        
+      }
+      @Override
+       public void mouseEntered(MouseEvent me) {
+            labelb.setIcon(new ImageIcon("packjefe/back-s.png"));
+            }
+      @Override
+       public void mouseExited(MouseEvent me){
+            labelb.setIcon(backico);
+            }
+    });
+    back.add(labelb);
+    
+    label3.setIcon(icon3);
+    f.setVisible(true);
       }
       @Override
        public void mouseEntered(MouseEvent me) {
@@ -201,6 +306,7 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        //QUITANDO MENU
         f.remove(panel);
         f.remove(panel2);
         f.remove(panel3);
@@ -208,6 +314,56 @@ public class Menu implements ActionListener {
         f.remove(panel5);
         f.revalidate();
         f.repaint();
+        //TABLA
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    JTable table = new JTable(rowData, columnNames);
+    table.setFont(new Font("Arial", Font.PLAIN, 14));
+    JScrollPane scrollPane = new JScrollPane(table);
+    scrollPane.setPreferredSize(new Dimension (1080, 900));
+    final JPanel panel8 = new JPanel();
+    panel8.setBackground(Color.WHITE);
+    panel8.setBounds(176, 216, 1500, 740);
+    f.getContentPane().add(panel8);
+    panel8.add(scrollPane, BorderLayout.CENTER);
+    ///////
+    final JPanel back = new JPanel();
+    back.setBackground(Color.WHITE);
+    back.setBounds(20, 20, 70, 70);
+    f.getContentPane().add(back);
+    final ImageIcon backico = new ImageIcon("packjefe/back.png");
+    final JLabel labelb = new JLabel(backico);
+    labelb.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent me) {
+        System.out.println("CLICKED");
+        f.remove(panel8);
+        f.remove(back);
+        f.getContentPane().add(panel);
+        f.getContentPane().add(panel2);
+        f.getContentPane().add(panel3);
+        f.getContentPane().add(panel4);
+        f.getContentPane().add(panel5);
+        
+        //f.revalidate();
+        f.repaint();
+        
+        
+      }
+      @Override
+       public void mouseEntered(MouseEvent me) {
+            labelb.setIcon(new ImageIcon("packjefe/back-s.png"));
+            }
+      @Override
+       public void mouseExited(MouseEvent me){
+            labelb.setIcon(backico);
+            }
+    });
+    back.add(labelb);
+    
+    label4.setIcon(icon4);
+    f.setVisible(true);
       }
       @Override
        public void mouseEntered(MouseEvent me) {
@@ -226,6 +382,7 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        //QUITANDO MENU
         f.remove(panel);
         f.remove(panel2);
         f.remove(panel3);
@@ -233,6 +390,56 @@ public class Menu implements ActionListener {
         f.remove(panel5);
         f.revalidate();
         f.repaint();
+        //TABLA
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    JTable table = new JTable(rowData, columnNames);
+    table.setFont(new Font("Arial", Font.PLAIN, 14));
+    JScrollPane scrollPane = new JScrollPane(table);
+    scrollPane.setPreferredSize(new Dimension (1080, 900));
+    final JPanel panel8 = new JPanel();
+    panel8.setBackground(Color.WHITE);
+    panel8.setBounds(176, 216, 1500, 740);
+    f.getContentPane().add(panel8);
+    panel8.add(scrollPane, BorderLayout.CENTER);
+    ///////
+    final JPanel back = new JPanel();
+    back.setBackground(Color.WHITE);
+    back.setBounds(20, 20, 70, 70);
+    f.getContentPane().add(back);
+    final ImageIcon backico = new ImageIcon("packjefe/back.png");
+    final JLabel labelb = new JLabel(backico);
+    labelb.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent me) {
+        System.out.println("CLICKED");
+        f.remove(panel8);
+        f.remove(back);
+        f.getContentPane().add(panel);
+        f.getContentPane().add(panel2);
+        f.getContentPane().add(panel3);
+        f.getContentPane().add(panel4);
+        f.getContentPane().add(panel5);
+        
+        //f.revalidate();
+        f.repaint();
+        
+        
+      }
+      @Override
+       public void mouseEntered(MouseEvent me) {
+            labelb.setIcon(new ImageIcon("packjefe/back-s.png"));
+            }
+      @Override
+       public void mouseExited(MouseEvent me){
+            labelb.setIcon(backico);
+            }
+    });
+    back.add(labelb);
+    
+    label5.setIcon(icon5);
+    f.setVisible(true);
         
       }
       @Override
