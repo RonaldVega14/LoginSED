@@ -57,7 +57,8 @@ public class DBConection {
             query = "SELECT * FROM `USUARIO` WHERE username=? and pass=? ";
             pst = con.prepareStatement(query);
             pst.setString(1, user);
-            pst.setString(2, pass);
+            int password = hashPass(user, pass);
+            pst.setInt(2, password);
             rs = pst.executeQuery();
             
             if(rs.next()){
@@ -74,4 +75,10 @@ public class DBConection {
         return credentials;
     }
     
+    public int hashPass(String user, String pass){
+        int hash = 1;
+        hash = hash * 17 + user.hashCode();
+        hash = hash * 31 + pass.hashCode();
+        return hash;
+    }
 }

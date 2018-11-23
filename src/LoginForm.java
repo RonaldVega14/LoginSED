@@ -224,7 +224,8 @@ public class LoginForm extends javax.swing.JFrame {
     private void signInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInMouseClicked
         user = UserField.getText();
         pass = PasswordField.getText();
-        
+        //Descomentar esta linea para convertir String normales a hash code e imprimirlos en consola.
+        //System.out.println("codigo: " + connect.hashPass(user, pass));
         if(connect.getConnection(user, pass)){
             JOptionPane.showMessageDialog(null, "Username found");
         }else{
