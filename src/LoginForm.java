@@ -227,7 +227,8 @@ public class LoginForm extends javax.swing.JFrame {
         //Descomentar esta linea para convertir String normales a hash code e imprimirlos en consola.
         //System.out.println("codigo: " + connect.hashPass(user, pass));
         if(connect.getConnection(user, pass)){
-            JOptionPane.showMessageDialog(null, "Username found");
+            //JOptionPane.showMessageDialog(null, "Username found");
+         Menu menu = new Menu();
         }else{
             JOptionPane.showMessageDialog(null, "Something went wrong: Username not found or the password is incorrect");
             
