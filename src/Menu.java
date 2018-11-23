@@ -85,7 +85,7 @@ public class Menu implements ActionListener {
     JTable table = new JTable(rowData, columnNames);
   
     JScrollPane scrollPane = new JScrollPane(table);
-    scrollPane.setSize(1500, 740);
+ 
     final JPanel panel8 = new JPanel();
     panel8.setBackground(Color.WHITE);
     panel8.setBounds(176, 216, 1500, 740);
