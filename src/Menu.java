@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,11 +13,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class Menu implements ActionListener {
     
   Menu() {
-    JFrame f = new JFrame("SED ENTORNO");
+    final JFrame f = new JFrame("SED ENTORNO");
     
     f.getContentPane().setBackground(Color.WHITE);
     //f.setBounds(100, 100, 450, 300);
@@ -27,38 +30,35 @@ public class Menu implements ActionListener {
     
    
     
-    JPanel panel = new JPanel();
+    final JPanel panel = new JPanel();
     panel.setBackground(Color.WHITE);
     panel.setBounds(172, 218, 510, 275);
     f.getContentPane().add(panel);
     
-    JPanel panel2 = new JPanel();
+    final JPanel panel2 = new JPanel();
     panel2.setBackground(Color.WHITE);
     panel2.setBounds(172+520, 218, 510, 275);
     f.getContentPane().add(panel2);
     
-    JPanel panel3 = new JPanel();
+    final JPanel panel3 = new JPanel();
     panel3.setBackground(Color.WHITE);
     panel3.setBounds(172, 218+285, 510, 275);
     f.getContentPane().add(panel3);
     
-    JPanel panel4 = new JPanel();
+    final JPanel panel4 = new JPanel();
     panel4.setBackground(Color.WHITE);
     panel4.setBounds(172+520, 218+285, 510, 275);
     f.getContentPane().add(panel4);
     
-    JPanel panel5 = new JPanel();
+    final JPanel panel5 = new JPanel();
     panel5.setBackground(Color.WHITE);
     panel5.setBounds(172+510*2+20, 218+275/2, 510, 275);
     f.getContentPane().add(panel5);
     
-    JPanel panel6 = new JPanel();
+    final JPanel panel6 = new JPanel();
     panel6.setBackground(Color.WHITE);
     panel6.setBounds(1920-140, 20, 70, 70);
     f.getContentPane().add(panel6);
-    
-    
-    
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     
@@ -70,6 +70,31 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        //or remove(JComponent
+        f.remove(panel);
+        f.remove(panel2);
+        f.remove(panel3);
+        f.remove(panel4);
+        f.remove(panel5);
+        f.revalidate();
+        f.repaint();
+        
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    JTable table = new JTable(rowData, columnNames);
+  
+    JScrollPane scrollPane = new JScrollPane(table);
+    scrollPane.setSize(1500, 740);
+    final JPanel panel8 = new JPanel();
+    panel8.setBackground(Color.WHITE);
+    panel8.setBounds(176, 216, 1500, 740);
+    f.getContentPane().add(panel8);
+    panel8.add(scrollPane, BorderLayout.CENTER);
+    f.setVisible(true);
+        
+        
+
       }
        @Override
        public void mouseEntered(MouseEvent me) {
@@ -89,6 +114,13 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        f.remove(panel);
+        f.remove(panel2);
+        f.remove(panel3);
+        f.remove(panel4);
+        f.remove(panel5);
+        f.revalidate();
+        f.repaint();
       }
        @Override
        public void mouseEntered(MouseEvent me) {
@@ -107,6 +139,13 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        f.remove(panel);
+        f.remove(panel2);
+        f.remove(panel3);
+        f.remove(panel4);
+        f.remove(panel5);
+        f.revalidate();
+        f.repaint();
       }
       @Override
        public void mouseEntered(MouseEvent me) {
@@ -126,6 +165,13 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        f.remove(panel);
+        f.remove(panel2);
+        f.remove(panel3);
+        f.remove(panel4);
+        f.remove(panel5);
+        f.revalidate();
+        f.repaint();
       }
       @Override
        public void mouseEntered(MouseEvent me) {
@@ -144,6 +190,14 @@ public class Menu implements ActionListener {
       @Override
       public void mouseClicked(MouseEvent me) {
         System.out.println("CLICKED");
+        f.remove(panel);
+        f.remove(panel2);
+        f.remove(panel3);
+        f.remove(panel4);
+        f.remove(panel5);
+        f.revalidate();
+        f.repaint();
+        
       }
       @Override
        public void mouseEntered(MouseEvent me) {
