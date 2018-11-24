@@ -277,7 +277,7 @@ public class LoginForm extends javax.swing.JFrame {
         //System.out.println("codigo: " + connect.hashPass(user, pass));
         if(connect.getConnection(user, pass, token)){
             //JOptionPane.showMessageDialog(null, "Username found");
-         Menu menu = new Menu();
+         Menu menu = new Menu(user);
         }else{
             JOptionPane.showMessageDialog(null, "Something went wrong: Username not found or the password is incorrect");
             

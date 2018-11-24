@@ -76,6 +76,28 @@ public class DBConection {
         return credentials;
     }
     
+    public int getTipo(String user){
+        try{
+            query = "SELECT typeUser FROM `USUARIO` WHERE username=?";
+            pst = con.prepareStatement(query);
+            pst.setString(1, user);
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                int tipo = rs.getInt("typeUser");
+                if(tipo == 1){
+                    return 1;
+                }
+                if(tipo == 2){
+                    return 2;
+                }
+            }
+        }catch(Exception e){
+        
+        }
+        return 2;
+    }
+    
     public int hashPass(String user, String pass){
         int hash = 1;
         hash = hash * 17 + user.hashCode();

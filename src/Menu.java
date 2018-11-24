@@ -24,9 +24,11 @@ import javax.swing.JTextField;
 
 public class Menu implements ActionListener {
     public static boolean bandera=true;
+    
+    DBConection connect = new DBConection();
     public static final JFrame f = new JFrame("SED ENTORNO");
-  Menu() {
-      if(bandera==false){
+  Menu(String user) {
+      if(connect.getTipo(user) == 2){
     
     final ImageIcon bg = new ImageIcon("packemple/bg.gif");
     final JLabel labelbg = new JLabel(bg);
