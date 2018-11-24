@@ -95,9 +95,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "1101", "Toyota Corolla", "$10,000" },
+        { "1657", "Honda Civic", "$20,000" } };
+    Object columnNames[] = { "ID", "Nombre", "Precio" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -178,9 +178,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "Carlos Arguello", "Roberto Martinez", "$20,000" },
+        { "Francisco Reyes", "Ernesto Cardona", "$10,000" } };
+    Object columnNames[] = { "Vendedor", "Cliente", "Venta" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -294,9 +294,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "856", "Juliana", "Arias" },
+        { "405", "Camila", "Huiza" } };
+    Object columnNames[] = { "ID", "Nombre", "Apellido" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -605,9 +605,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "1101", "Toyota Corolla", "$10,000" },
+        { "1657", "Honda Civic", "$20,000" } };
+    Object columnNames[] = { "ID", "Nombre", "Precio" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -690,9 +690,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "Carlos Arguello", "Roberto Martinez", "$20,000" },
+        { "Francisco Reyes", "Ernesto Cardona", "$10,000" } };
+    Object columnNames[] = { "Vendedor", "Cliente", "Venta" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -769,9 +769,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+        Object rowData[][] = { { "Carlos Urias", "Problema con cliente id 480" },
+        { "Dave Fernandez", "Llegue a la meta en 13/11/18" }, { "Jose Chopin", "Llegue tarde debido a un accidente" } };
+    Object columnNames[] = { "Empleado", "Reporte"};
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
@@ -847,9 +847,9 @@ public class Menu implements ActionListener {
         f.revalidate();
         f.repaint();
         //TABLA
-        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+       Object rowData[][] = { { "856", "Juliana", "Arias" },
+        { "405", "Camila", "Huiza" } };
+    Object columnNames[] = { "ID", "Nombre", "Apellido" };
     JTable table = new JTable(rowData, columnNames);
     table.setFont(new Font("Arial", Font.PLAIN, 14));
     JScrollPane scrollPane = new JScrollPane(table);
