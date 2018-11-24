@@ -52,13 +52,14 @@ public class DBConection {
         
     }
     
-    public boolean getConnection(String user, String pass){
+    public boolean getConnection(String user, String pass, String token){
         try{
-            query = "SELECT * FROM `USUARIO` WHERE username=? and pass=? ";
+            query = "SELECT * FROM `USUARIO` WHERE username=? and pass=? and token=?";
             pst = con.prepareStatement(query);
             pst.setString(1, user);
             int password = hashPass(user, pass);
             pst.setInt(2, password);
+            pst.setString(3, token);
             rs = pst.executeQuery();
             
             if(rs.next()){

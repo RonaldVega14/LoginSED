@@ -1,11 +1,20 @@
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.awt.FileDialog;
+import java.awt.Frame;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginForm extends javax.swing.JFrame {
     
     DBConection connect = new DBConection();
-    private String user, pass;
+    private String user, pass, part1, part2, directory, token, filter = ".txt";
+    FileDialog loadDialog;
 
     public LoginForm() {
         initComponents();
@@ -33,6 +42,8 @@ public class LoginForm extends javax.swing.JFrame {
         signIn = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
         jLabelRegister = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        File = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -136,6 +147,25 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel6.setText("Token");
+
+        File.setBackground(new java.awt.Color(34, 167, 240));
+        File.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        File.setForeground(new java.awt.Color(255, 255, 255));
+        File.setText("Examinar");
+        File.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FileMouseClicked(evt);
+            }
+        });
+        File.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FileActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -143,20 +173,26 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(PasswordField))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(signIn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                        .addComponent(signIn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(File, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PasswordField))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)))
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelRegister)
@@ -165,7 +201,11 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(File, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,9 +264,18 @@ public class LoginForm extends javax.swing.JFrame {
     private void signInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInMouseClicked
         user = UserField.getText();
         pass = PasswordField.getText();
+        part1 = loadDialog.getDirectory();
+        part2 = loadDialog.getFile();
+        directory = part1 + part2;
+        try {
+            token = muestraContenido(directory);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Descomentar esta linea para convertir String normales a hash code e imprimirlos en consola.
         //System.out.println("codigo: " + connect.hashPass(user, pass));
-        if(connect.getConnection(user, pass)){
+        if(connect.getConnection(user, pass, token)){
             //JOptionPane.showMessageDialog(null, "Username found");
          Menu menu = new Menu();
         }else{
@@ -237,6 +286,20 @@ public class LoginForm extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_signInMouseClicked
+
+    private void FileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FileMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_FileMouseClicked
+
+    private void FileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileActionPerformed
+        String filter = "*.txt";
+        loadDialog = openFileDialog("Choose file", filter);
+        System.out.println(loadDialog.getDirectory());
+        System.out.println(loadDialog.getFile());
+        File.setText("File selected");
+
+    }//GEN-LAST:event_FileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,14 +332,42 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
     }
+    
+    public String muestraContenido(String archivo) throws FileNotFoundException, IOException {
+        String cadena, cadenaAux = "";
+        FileReader f = new FileReader(archivo);
+        BufferedReader b = new BufferedReader(f);
+        while((cadena = b.readLine())!=null) {
+            System.out.println(cadena);
+            cadenaAux = cadena;
+        }
+        b.close();
+        return cadenaAux;
+    }
+
+    
+    
+    public FileDialog openFileDialog(String title, String filter) {
+        System.out.println("Which file you want to use? \n");
+
+        FileDialog loadDialog = new FileDialog(new Frame(), title, FileDialog.LOAD);
+        loadDialog.setFile(filter);
+        loadDialog.setModal(true);
+        //loadDialog.pack();
+        loadDialog.setVisible(true);
+
+        return loadDialog;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancel;
+    private javax.swing.JButton File;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JTextField UserField;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelClose;
     private javax.swing.JLabel jLabelMin;
     private javax.swing.JLabel jLabelRegister;
